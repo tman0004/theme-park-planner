@@ -34,41 +34,77 @@ body {
     float: right;
     margin-top: 1%;
     // height: 30px;
-    a {
-      float: left;
-      margin-left: 7%;
-      text-decoration: none;
-      p {
-        color: white;
-        // border-bottom: 3px white solid;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 120%;
-          left: 25%;
-          width: 20px;
-          height: 3px;
-          display: inline-block;
-          background-color: white;
-          margin-right: 4px;
-          border-radius: 5px;
+    .rightSelected {
+      a {
+        float: left;
+        margin-left: 7%;
+        text-decoration: none;
+        p {
+          color: white;
+          // border-bottom: 3px white solid;
+          position: relative;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 30px;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 30%;
+            width: 50px;
+            height: 8px;
+            display: inline-block;
+            background-color: white;
+            margin-right: 4px;
+            border-radius: 5px;
+          }
         }
-      }
-      input {
-        margin-top: -5px;
-        width: 90px;
-        height: 33px;
-        border: 0;
-        outline: none;
-        color: white;
-        border-radius: 6px;
-        background-color: rgb(66, 88, 173);
-        &:hover {
-          cursor: pointer;
+        input {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 30px;
+          margin-top: -5px;
+          width: 164px;
+          height: 61px;
+          border: 0;
+          outline: none;
+          color: white;
+          border-radius: 6px;
+          background-color: rgb(66, 88, 173);
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
+    .rightUnselected {
+      a {
+        float: left;
+        margin-left: 7%;
+        text-decoration: none;
+        p {
+          color: white;
+          // border-bottom: 3px white solid;
+          position: relative;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 30px;
+        }
+        input {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 30px;
+          margin-top: -5px;
+          width: 164px;
+          height: 61px;
+          border: 0;
+          outline: none;
+          color: white;
+          border-radius: 6px;
+          background-color: rgb(66, 88, 173);
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    
   }
 }
 

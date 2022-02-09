@@ -35,38 +35,68 @@ body {
   float: right;
   margin-top: 1%;
 }
-.topWrapper .right a {
+.topWrapper .right .rightSelected a {
   float: left;
   margin-left: 7%;
   text-decoration: none;
 }
-.topWrapper .right a p {
+.topWrapper .right .rightSelected a p {
   color: white;
   position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
 }
-.topWrapper .right a p::after {
+.topWrapper .right .rightSelected a p::after {
   content: "";
   position: absolute;
   top: 120%;
-  left: 25%;
-  width: 20px;
-  height: 3px;
+  left: 30%;
+  width: 50px;
+  height: 8px;
   display: inline-block;
   background-color: white;
   margin-right: 4px;
   border-radius: 5px;
 }
-.topWrapper .right a input {
+.topWrapper .right .rightSelected a input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
   margin-top: -5px;
-  width: 90px;
-  height: 33px;
+  width: 164px;
+  height: 61px;
   border: 0;
   outline: none;
   color: white;
   border-radius: 6px;
   background-color: #4258ad;
 }
-.topWrapper .right a input:hover {
+.topWrapper .right .rightSelected a input:hover {
+  cursor: pointer;
+}
+.topWrapper .right .rightUnselected a {
+  float: left;
+  margin-left: 7%;
+  text-decoration: none;
+}
+.topWrapper .right .rightUnselected a p {
+  color: white;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+.topWrapper .right .rightUnselected a input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  margin-top: -5px;
+  width: 164px;
+  height: 61px;
+  border: 0;
+  outline: none;
+  color: white;
+  border-radius: 6px;
+  background-color: #4258ad;
+}
+.topWrapper .right .rightUnselected a input:hover {
   cursor: pointer;
 }
 .mainWrapper .left {
