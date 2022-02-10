@@ -8,6 +8,8 @@
     <title>Theme Park Planner</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/planner.css">
+    <link rel="stylesheet" type="text/css" href="../css/map.css">
+    <script src="../js/map.js"></script>
 </head>
 <body>
 <div class="stageBox">
@@ -40,7 +42,13 @@
             1
         </div>
         <div class="right">
-            <img src="../pics/google_maps.png" alt="">
+            <div id="map"></div>
+
+            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_Nm-0wy_na3aHj6Zxva0kEVgOWDWVUB4&callback=initMap&v=weekly"
+            async
+            ></script>
         </div>
     </div>
 </div>
