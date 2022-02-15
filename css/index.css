@@ -138,21 +138,21 @@ body {
   float: right;
   margin-top: 1%;
 }
-.topWrapper .right .rightSelected a {
+.rightSelected a {
   float: left;
-  margin-left: 7%;
+
   text-decoration: none;
 }
-.topWrapper .right .rightSelected a p {
+.rightSelected a p {
   color: white;
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
 }
-.topWrapper .right .rightSelected a p::after {
+.rightSelected a p::after {
   content: "";
   position: absolute;
-  top: 120%;
+  top: 90%;
   left: 30%;
   width: 50px;
   height: 8px;
@@ -161,7 +161,7 @@ body {
   margin-right: 4px;
   border-radius: 5px;
 }
-.topWrapper .right .rightSelected a input {
+.rightSelected a input {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   margin-top: -5px;
@@ -173,7 +173,7 @@ body {
   border-radius: 6px;
   background-color: #4258ad;
 }
-.topWrapper .right .rightSelected a input:hover {
+.rightSelected a input:hover {
   cursor: pointer;
 }
 .topWrapper .right .rightUnselected a {

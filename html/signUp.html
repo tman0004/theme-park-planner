@@ -7,32 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Park Planner</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="../js/nav.js"></script>
     <link rel="stylesheet" href="../css/signIn.css">
 </head>
 <body>
 <div class="stageBox">
-    <div class="topContainer">
-        <div class="topLeftContainer">
-            <div class="squareLogo">
-                <div class="squareLogoInner">
-
-                </div>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <img src="../pics/logo.png">
+                <a href="../index.html"><b>Theme Park Planner</b></a>
             </div>
-            <div class="mainTitle">
-                <h1>Theme Park Planner</h1>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li class="rightSelected"><a href="signUp.html">
+                            <p><b>Sign Up</b></p>
+                        </a></li>
+                    <li ><a href="../html/signIn.html">
+                            <p><b>Sign In</b></p>
+                        </a></li>
+                    <li ><a href="../html/planner.html">
+                            <p><b>Planner</b></p>
+                        </a></li>
+                    <li><a href="../index.html">
+                            <p><b>Welcome</b></p>
+                        </a></li>
+                </ul>
             </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
         </div>
-        <div class="topRightContainer">
-            <div class="rightSelected">
-                <a href="./signUp.html"><p><b>Sign Up</b></p></a>
-            </div>
-            <div class="rightUnselected">
-                <a href="./signIn.html"><p><b>Sign In</b></p></a>
-                <a href="./planner.html"><p><b>Planner</b></p></a>
-                <a href="../index.html"><p><b>Welcome</b></p></a>
-            </div>
-        </div>
-    </div>
+    </nav>
     <div class="formInput">
         <form action="" method="post">
             <div class="emailInput">
