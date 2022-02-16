@@ -114,6 +114,11 @@ body {
   line-height: 30px;
   color: #FFFFFF;
 }
+.stageBox .middleContainer .castle img {
+  margin-top: 300px;
+  margin-right: 200px;
+  float: right;
+}
 .topWrapper {
   margin-top: 4%;
 }
