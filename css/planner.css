@@ -8,15 +8,154 @@
   float: left;
   width: 30%;
   height: 100%;
-  background-color: white;
+  background-color: #F9F7F7;
+  border-radius: 2.5rem;
+  
 }
 .listWrapper .right {
   float: right;
   width: 65%;
   height: 100%;
   background-color: pink;
+  border-radius: 2.5rem;
 }
 .listWrapper .right img {
   background-color: transparent;
 }
 /*# sourceMappingURL=planner.css.map */
+
+
+
+
+
+
+/*# dropItems */
+#left_scroll{
+  overflow: scroll;
+  overflow-x: hidden;
+  
+}
+
+/* Scroll 5 */
+.sc5::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+.sc5::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.sc5::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #00aeff, #7d61e0);
+  border-radius: 10px;
+	-webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
+/*===== VARIABLES CSS =====*/
+:root {
+  /*===== Colors =====*/
+  --first-color: #272A3A;
+  --first-color-light: #9b9dac;
+  --first-color-lighten: #F8F8FC;
+
+  /*===== Font and typography =====*/
+  --body-font: 'Ubuntu', sans-serif;
+  --normal-font-size: 1.6rem;
+  --smaller-font-size: .813rem;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  background-color: var(--first-color-lighten);
+}
+
+h1{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+/*===== DRAG and DROP =====*/
+.drop, .drop__container{
+  
+}
+
+.drop{
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop__container{
+  row-gap: 1rem;
+  
+
+}
+
+.drop__card, .drop__data{
+  display: flex;
+  align-items: center;
+}
+
+.drop__card{
+  justify-content: space-between;
+  padding: .75rem 1.25rem .75rem .75rem;
+  background-color: #eff0f3;
+
+  border-radius: 2.5rem;
+}
+
+.drop__img{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.drop__name{
+  font-size: var(--normal-font-size);
+  color: var(--first-color);
+  font-weight: 500;
+}
+
+.drop__profession{
+  font-size: var(--smaller-font-size);
+  color: var(--first-color-light);
+}
+
+.drop__social{
+  margin: 0 .375rem;
+  color: var(--first-color-light);
+  transition: .4s;
+}
+
+.drop__social:hover{
+  color: var(--first-color);
+}
+
+/* Class name for the chosen item */
+.sortable-chosen{
+  box-shadow: 8px 8px 32px #E1E1E1;
+}
+
+/* Class name for the dragging item */
+.sortable-drag{
+  opacity: 0;
+}
+
+
+
