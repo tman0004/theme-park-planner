@@ -11,7 +11,9 @@ body {
 .stageBox {
   border: 10px solid gray;
   max-width: 1440px;
-  height: 900px;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
   margin: auto;
 }
 .stageBox .topContainer {
