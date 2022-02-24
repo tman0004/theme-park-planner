@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../css/nav.css">
     <script src="../js/nav.js"></script>
     <script src="../js/map.js"></script>
+    <script src="../js/start_plan.js"></script>
     
 </head>
 
@@ -298,7 +299,51 @@
                     async></script>
             </div>
         </div>
-    </div>
+
+
+
+
+
+        <div class="top_favorits">
+            <div class="favorite">
+                <img id="icon1" src="../pics/thumbnails/silly-symphony-swings.jpg" alt="" class="drop__img">
+                <div>
+                    <h1 class="favorite__name">Silly Symphony Swings</h1>
+                    
+                </div>
+            </div>
+            <div class="favorite">
+                <img id="icon2" src="../pics/thumbnails/golden-zephyr.jpg" alt="" class="drop__img">
+                <div>
+                    <h1 class="favorite__name">Golden Zephyr</h1>
+
+                </div>
+            </div>
+            <div class="favorite">
+                <img id="icon3" src="../pics/thumbnails/goofys-sky-school.jpg" alt="" class="drop__img">
+                <div>
+                    <h1 class="favorite__name">Goofy's Sky School</h1>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="button_container">
+            <button class="plan_button" id="start_plan_button">
+                <span class="button_text" >Start Planning</span>
+                <span class="button_icon" >
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </span>
+            </button>
+        </div>
+
+
+        <div class="planResult">
+
+        </div>
+
+    </div>make
 <!--===== SORTABLE JS =====-->
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
@@ -313,6 +358,10 @@
   });
 }
 </script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>
