@@ -47,23 +47,28 @@
         <form action="" method="post">
             <div class="emailInput">
                 <p>Email</p>
-                <input type="text" value="">
+                <input type="text" name = "email" id = "email" />
+				<span id = "emailError">  </span>
             </div>
             <div class="nameInput">
                 <p>Username</p>
-                <input type="text" value="">
+                <input type="text" name = "username" id = "username" />
+				<span id = "usernameError">  </span>
             </div>
             <div class="passwordInput">
                 <p>Password</p>
-                <input type="password" value="">
+                <input type="password" name = "userpwd" id = "userpwd"/>
+				<span id = "pwdError">  </span>
             </div>
             <div class="conPasswordInput">
                 <p>Confirm Password</p>
-                <input type="password" value="">
+                <input type="password" id = "userpwd_conf" />
+				<span id = "pwdConfError">  </span>
             </div>
             <button type="submit">SUBMIT</button>
         </form>
     </div>
 </div>
+<script type="text/javascript" src="../js/signup.js"></script>
 </body>
 </html>
