@@ -62,24 +62,11 @@ Theme Park Planner is a website where you can plan your travel itinerary when vi
     │
     └─thumbnails
             golden-zephyr.jpg
-            goofys-sky-school.jpg
-            guardians-of-the-galaxy-mission-breakout.jpg
-            incredicoaster-face-covering.jpg
-            jessies-critter-carousel.jpg
-            jumpin-jellyfish.jpg
-            little-mermaid-ariels-undersea-adventure.jpg
-            luigis-rollickin-roadsters.jpg
-            maters-junkyard-jamboree.jpg
-            monsters-inc.jpg
-            pixar-pal-around-night.jpg
-            radiator-springs-racers.jpg
-            silly-symphony-swings.jpg
-            soarin-over-california.jpg
-            toy-story-mania.jpg
+            ...
 
 ```
 
-**css/:** The directory where all the .css file is located. Note that you should only edit the .less file, not the .css file, unless a
+**css/:** The directory where all the .css file is located. Note that you should only edit the .less file, not the .css file, unless a .css files has no corresponding .less file. When a .less file is edited, a new .css file of the same name will be generated upon saving the .less file.
 
 ## Current State of the Project
 
