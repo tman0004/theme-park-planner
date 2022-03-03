@@ -2,8 +2,30 @@
 
 Theme Park Planner is a website where you can plan your travel itinerary when visiting a theme park.
 
+
+## Table of Contents
+* [Background](#background)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [File Structure](#file-Structure)
+* [Current State of the Project](#current-state-of-the-project)
+* [Planned Features](#planned-features)
+* [Additional Information](#additional-information)
+* [Contribute](#contribute)
+
+
 ## Background
 
+## Technologies
+Project is created with:
+- html
+- css
+- javascript
+    - SortableJS
+    - Muuri
+	
+## Setup
+To run this project, install it locally using npm:
 
 ## File Structure
 
@@ -70,6 +92,7 @@ Theme Park Planner is a website where you can plan your travel itinerary when vi
 
 ## Current State of the Project
 
+Currently, we have build a basic version of the webpage and a path finding algorithm based on java.
 
 
 ## Planned Features
@@ -78,4 +101,7 @@ In this section, we list the features that are planned for this project for your
 
 
 ## Additional Information
+
+
+## Contribute
 
