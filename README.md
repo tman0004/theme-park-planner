@@ -18,9 +18,10 @@ Theme Park Planner is a website where you can plan your travel itinerary when vi
 
 ## Technologies
 Project is created with:
-- html
-- css
-- javascript
+- HTML
+- CSS
+- Less
+- JavaScript
     - SortableJS
     - Muuri
 	
@@ -106,6 +107,17 @@ To run this project, install it locally using npm:
 ## Current State of the Project
 
 Currently, we have build a basic version of the webpage and a path finding algorithm based on java.
+
+### Current Features of Web Page:
+- introduction page
+- planner page
+    - a list of rides that shows the rides
+    - a google map of the theme park
+    - a grid of rides that shows the favorite ride
+    - a start planning button
+    - a blank area for showing the result 
+- sign-in page
+- sign-up page
 
 
 ## Planned Features
