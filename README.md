@@ -36,16 +36,7 @@ To run this project, install it locally using npm:
 │  index.html                         
 │  LICENSE                            
 │  planner.html                       
-│  README.md                          
-│                                     
-├─.idea                               
-│      .gitignore                     
-│      jsLibraryMappings.xml          
-│      modules.xml                    
-│      theme-park-planner.iml         
-│      vcs.xml                        
-│      watcherTasks.xml               
-│      workspace.xml                  
+│  README.md                                      
 │                                     
 ├─css
 │      index.css
@@ -91,9 +82,13 @@ To run this project, install it locally using npm:
 
 **css/:** The directory where all the .css file is located. Note that you should only edit the .less file, not the .css file, unless a .css files has no corresponding .less file. When a .less file is edited, a new .css file of the same name will be generated upon saving the .less file.
 
+**html/:** The directory for the HTML file for planner page, sign in page, and sign up page.
+
+
+
 ## Current State of the Project
 
-Currently, we have build a basic version of the webpage and a path finding algorithm based on java.
+Currently, we have built a basic version of the webpage and a path finding algorithm based on java.
 
 ### Current Features of Web Page:
 - introduction page
