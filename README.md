@@ -31,7 +31,8 @@ Project is created with:
 ## Setup
 
 To run this project, install the package locally and open the webpage directly.
-no package needs to be installed for this program.
+
+This is a website application, and all the packages that need are linked directly inside our JavaScript code, so there are no package needs to be installed.
 
 ## File Structure
 
@@ -102,6 +103,7 @@ Currently, we have built a basic version of the webpage and a path finding algor
 ### Current Features of Web Page:
 
 - Introduction page
+    - top menu bar
 - Planner page
     - A list of rides that shows the rides
     - An embedded Google Maps view of the theme park
@@ -109,18 +111,18 @@ Currently, we have built a basic version of the webpage and a path finding algor
     - A start planning button
         - this button is not linked with any algoritm, so it will only direct to the Planned Features section of the Documentation
     - A blank area for showing the result
-- Sign-in page
-- Sign-up page
+- Sign-in & Sign-up page
+    - input frame for user information
+    - login and register button
     - Regex check for input fields
 
 ## Planned Features
 
-- Introduction page
+These are planned features that are not realized yet.
 - Planner page
     - Link the planner page's start planning button to the java path finding algorithm.
     - Show the final path plan at the bottom of the planning page
-- Sign-in page
-- Sign-up page
+- Sign-in & Sign-up pages
     - Deploy a simple database to support user registration and login functions
 
 ## Project Expectation
