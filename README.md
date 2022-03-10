@@ -15,7 +15,7 @@ Theme Park Planner is a website where you can plan your travel itinerary when vi
 
 ## Background
 
-Theme parks are a very popular holiday destination these days. But when people go to the theme park, it is not difficult to find that too many visitors cause many attractions to have long wait times. This greatly reduces the experience of visitors. People generally wish to play as many attractions as possible in a theme parkWe, therefore, we want to make a website that can help people to plan a path that spend less time and maximize the number of attractions visited.
+Theme parks are a very popular holiday destination these days. But when people go to the theme park, it is not difficult to find that too many visitors cause many attractions to have long wait time. This greatly reduces the experience of visitors. People generally wish to play as many attractions as possible in a theme parkWe, therefore, we want to make a website that can help people to plan a path that spend less time and maximize the number of attractions visited.
 
 ## Technologies
 
@@ -107,7 +107,7 @@ Currently, we have built a basic version of the webpage and a path finding algor
     - An embedded Google Maps view of the theme park
     - A grid of rides that shows the favorite ride
     - A start planning button
-        - this button is not linked with any algoritm, so it will only direct to the Planned Features section of the Documentation
+        - this button is not linked with any algorithm, so it will only direct to the Planned Feature section of the Documentation
     - A blank area for showing the result
 - Sign-in page
 - Sign-up page
@@ -125,7 +125,7 @@ Currently, we have built a basic version of the webpage and a path finding algor
 
 ## Project Expectation
 
-We plan for this project to implement a complete web page that supports path planning for the theme park to help the user to plan a most fit path for themself to play around in a theme park. And this path planning algorithm should calculate a most efficient path that spend less time to visits as many attractions as possible base on the walking time between attractions inside theme park, wait time of each attractions and people's satisfication(like people's favorit attractions in the park).
+We plan for this project to implement a complete web page that supports path planning for the theme park to help the user to plan a most fit path for themselves to play around in a theme park. And this path planning algorithm should calculate a most efficient path that spend the least amount of time to visit as many attractions as possible base on the walking time between attractions inside theme park, wait time of each attraction and people's satisfaction (like people's favorite attractions in the park).
 
 The team taking over this project is always free to add any factors they want to consider, and we've listed a few features that could be considered below.
 ### More Possible Features:
