@@ -5,6 +5,6 @@ window.onload = function() {
 }
 
 function planClick () {
-    alert("Not implement yet")
+    window.open("https://github.com/RyanLiu2015/theme-park-planner/tree/week9_doc_and_wrapup#planned-features")
 }
 

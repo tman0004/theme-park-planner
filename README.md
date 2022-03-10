@@ -10,9 +10,12 @@ Theme Park Planner is a website where you can plan your travel itinerary when vi
 * [File Structure](#file-Structure)
 * [Current State of the Project](#current-state-of-the-project)
 * [Planned Features](#planned-features)
+* [Project Expectation](#project-expectation)
 * [Additional Information](#additional-information)
 
 ## Background
+
+Theme parks are a very popular holiday destination these days. But when people go to the theme park, it is not difficult to find that too many visitors cause many attractions to have long wait times. This greatly reduces the experience of visitors. People generally wish to play as many attractions as possible in a theme parkWe, therefore, we want to make a website that can help people to plan a path that spend less time and maximize the number of attractions visited.
 
 ## Technologies
 
@@ -27,7 +30,8 @@ Project is created with:
 
 ## Setup
 
-To run this project, install it locally using npm:
+To run this project, install the package locally and open the webpage directly.
+no package needs to be installed for this program.
 
 ## File Structure
 
@@ -103,6 +107,7 @@ Currently, we have built a basic version of the webpage and a path finding algor
     - An embedded Google Maps view of the theme park
     - A grid of rides that shows the favorite ride
     - A start planning button
+        - this button is not linked with any algoritm, so it will only direct to the Planned Features section of the Documentation
     - A blank area for showing the result
 - Sign-in page
 - Sign-up page
@@ -110,7 +115,24 @@ Currently, we have built a basic version of the webpage and a path finding algor
 
 ## Planned Features
 
-In this section, we list the features that are planned for this project for your reference.
+- Introduction page
+- Planner page
+    - Link the planner page's start planning button to the java path finding algorithm.
+    - Show the final path plan at the bottom of the planning page
+- Sign-in page
+- Sign-up page
+    - Deploy a simple database to support user registration and login functions
+
+## Project Expectation
+
+We plan for this project to implement a complete web page that supports path planning for the theme park to help the user to plan a most fit path for themself to play around in a theme park. And this path planning algorithm should calculate a most efficient path that spend less time to visits as many attractions as possible base on the walking time between attractions inside theme park, wait time of each attractions and people's satisfication(like people's favorit attractions in the park).
+
+The team taking over this project is always free to add any factors they want to consider, and we've listed a few features that could be considered below.
+### More Possible Features:
+- Currently, we only support one theme park, the website could have a page for selecting theme parks to support more theme parks
+- Normally, our algorithm only considers as many attractions as possible for visitors to play in a day from the park opening to closing, but not everyone wants to spend that long in a theme park, so we can add a time range limits and let users choose when to play in the theme park.
+- we also could consider lunch break, shopping time, etc. so that the result schedule is not very tense.
+
 
 ## Additional Information
 
