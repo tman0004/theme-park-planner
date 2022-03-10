@@ -27,6 +27,7 @@ Project is created with:
 - JavaScript
     - SortableJS
     - Muuri
+	
 
 ## Setup
 
@@ -102,6 +103,11 @@ Currently, we have built a basic version of the webpage and a path finding algor
 
 ### Current Features of Web Page:
 
+- First of all, this project introduces [Google Maps API](https://developers.google.com/maps/documentation) to implement many basic functions.
+    - Lock and zoom in the latitude and longitude of the ride
+    - Estimated waiting time
+    - Map navigation function
+    - ...
 - Introduction page
     - top menu bar
 - Planner page
@@ -120,8 +126,9 @@ Currently, we have built a basic version of the webpage and a path finding algor
 
 These are planned features that are not realized yet.
 - Planner page
+    - Choose different theme parks to start the plan.
     - Link the planner page's start planning button to the java path finding algorithm.
-    - Show the final path plan at the bottom of the planning page
+    - Show the final path plan at the bottom of the planning page.
 - Sign-in & Sign-up pages
     - Deploy a simple database to support user registration and login functions
 
