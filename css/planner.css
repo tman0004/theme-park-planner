@@ -122,14 +122,14 @@ img{
 
 }
 
-.drop__img{
+.drop__img, .favorite_img{
   width: 55px;
   height: 55px;
   border-radius: 50%;
   margin-right: 1rem;
 }
 
-.drop__name{
+.drop__name, .favorite__name{
   font-size: var(--normal-font-size);
   color: var(--first-color);
   font-weight: 500;
@@ -162,30 +162,57 @@ img{
 
 
 
-
-.top_favorits {
+/*===== Muuri Grid =====*/
+.grid {
   display: flex;
   justify-content: space-around;
   width: 80%;
-  height: 75px;
   margin: 10% auto;
   margin-top: 5%;
   margin-bottom: 5%;
+  position: relative;
+}
+
+.favorite_block {
+  display: block;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  height: 75px;
+  padding: .75rem 1.25rem .75rem .75rem;
+  margin: 5px;
+  z-index: 1;
+  background: #eff0f3;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+
+.favorite_block.muuri-item-dragging {
+  z-index: 3;
+}
+.favorite_block.muuri-item-releasing {
+  z-index: 2;
+}
+.favorite_block.muuri-item-hidden {
+  z-index: 0;
 }
 
 .favorite {
-  border-radius: 15px;
-  height: 75px;
-  width: 55px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
-.favorite__name {
-  font-size: var(--middle-font-size);
-  color: var(--first-color);
-  font-weight: 500;
+.favorite_block:hover {
+  background-color: #50a0fb;
 }
 
 
+/*===== button =====*/
 .button_container {
   display: flex;
   justify-content: center;
