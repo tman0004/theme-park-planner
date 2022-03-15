@@ -111,19 +111,16 @@ Currently, we have built a basic version of the webpage and a path finding algor
 
 - First, this project introduces [Google Maps API](https://developers.google.com/maps/documentation) to implement many
   basic functions.
-    - Lock and zoom in the latitude and longitude of the ride
+    - Center and zoom into the coordinate (latitude and longitude) of the ride
     - Estimated waiting time
     - Map navigation function
-    - ...
 - Introduction page
-    - Top menu bar
+    - Top navigation bar
 - Planner page
     - A list of rides that shows the rides
     - An embedded Google Maps view of the theme park
     - A grid of rides that shows the favorite ride
-    - A start planning button
-        - this button is not linked with any algorithm, so it will only direct to the Planned Feature section of the
-          Documentation
+    - A start planning button (this button is not linked with any algorithm, so it will only direct to the Planned Feature section of the documentation)
     - A blank area for showing the result
 - Sign-in & Sign-up page
     - Input frame for user information
