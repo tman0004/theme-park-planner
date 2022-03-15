@@ -132,11 +132,11 @@ Currently, we have built a basic version of the webpage and a path finding algor
 These are the planned features that are not realized yet.
 
 - Planner page
-    - Choose different theme parks to start the plan.
-    - Link the planner page's start planning button to the java path finding algorithm.
-    - Show the final path plan at the bottom of the planning page.
-- Sign-in & Sign-up pages
-    - Deploy a simple database to support user registration and login functions
+    - Ability to select different theme parks to start the planning.
+    - Link the start planning button in the planner page to the java path finding algorithm.
+    - Display the final path plan at the bottom of the planning page.
+- Sign-in page and Sign-up page
+    - Deploy a database to support user registration and login functions
 
 ## Project Expectation
 
