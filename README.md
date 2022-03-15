@@ -122,8 +122,8 @@ Currently, we have built a basic version of the webpage and a path finding algor
     - A grid of rides that shows the favorite ride
     - A start planning button (this button is not linked with any algorithm, so it will only direct to the Planned Feature section of the documentation)
     - A blank area for showing the result
-- Sign-in & Sign-up page
-    - Input frame for user information
+- Sign-in page and Sign-up page
+    - Input box for user information
     - Login and register button
     - Regex check for input fields
 
