@@ -15,7 +15,7 @@ h4 {
 }
 
 #main_window {
-	width: 600px;
+	width: 1200px;
 	margin: auto;
 	padding: 5px;
 	border: 1px solid gray;
@@ -25,7 +25,7 @@ h4 {
 
 #left_pane {
 	float: left;
-	width: 50%;
+	width: 25%;
 }
 
 #available_metrics_filter {
@@ -52,7 +52,7 @@ h4 {
 
 #right_pane {
 	float: left;
-	width: 50%;
+	width: 25%;
 }
 
 #selected_metrics_list {

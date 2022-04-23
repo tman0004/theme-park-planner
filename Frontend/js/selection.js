@@ -91,7 +91,6 @@ Droppable.prototype = {
 		this.element = element;
 		this.isBeingDraggedOver = false;
 		this.customDragDrop = customDragDrop;
-		
 		droppables.push(this);
 	},
 	
@@ -217,6 +216,16 @@ window.onload = function() {
 	});
 	
 	var selectedMetricsDroppable = new Droppable("next_metric", function(draggable) {
+		if (this.element.parentNode !== draggable.element.parentNode) {
+			this.element.parentNode.insertBefore(draggable.element, this.element);
+		}
+        let a = document.getElementById('selected_metrics_list').getElementsByTagName('li');
+        for (let i = 0; i < a.length-1; i++) {
+            console.log(a[i].firstChild.data);
+        }
+	});
+
+    var selectedMetricsDroppable2 = new Droppable("next_metric2", function(draggable) {
 		if (this.element.parentNode !== draggable.element.parentNode) {
 			this.element.parentNode.insertBefore(draggable.element, this.element);
 		}
