@@ -23,6 +23,9 @@
     <script src="../js/nav.js"></script>
     <script src="../js/map.js"></script>
     <script src="../js/start_plan.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/selection.css" />
+	<script type="text/javascript" src="../js/selection.js"></script>
     
 </head>
 
@@ -52,9 +55,27 @@
             </div>
         </nav>
 
-
+        <div id="main_window">
+            <div id="left_pane">
+                <h4>Draggables</h5>
+                <div id="available_metrics_filter">
+                    <ul id="available_metrics_list"> </ul>
+                </div>
+            </div>
+            <div id="right_pane">
+                <h4>Droppable</h5>
+                <div id="selected_metrics">
+                    <ul id="selected_metrics_list">
+                        <li id="next_metric">Next Draggable</li>
+                    </ul>
+                </div>
+                <div id="remove_metric">
+                    Remove Draggable
+                </div>
+            </div>
+        </div>
     </div>make
-
+    
 
 </body>
 
