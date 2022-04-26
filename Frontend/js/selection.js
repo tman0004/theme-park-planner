@@ -96,32 +96,39 @@ Droppable.prototype = {
 	
 	// Calculate the top-left coordinate of this element
 	position: function() {
-		var position = {x: this.element.offsetLeft, y: this.element.offsetTop};
+		if (this.element != null) {
+			var position = {x: this.element.offsetLeft, y: this.element.offsetTop};
 		
-		var offsetParent = this.element.offsetParent;
-		while (offsetParent) {
-			position.x += offsetParent.offsetLeft;
-			position.y += offsetParent.offsetTop;
-			offsetParent = offsetParent.offsetParent;
+			var offsetParent = this.element.offsetParent;
+			while (offsetParent) {
+				position.x += offsetParent.offsetLeft;
+				position.y += offsetParent.offsetTop;
+				offsetParent = offsetParent.offsetParent;
+			}
 		}
+		
 		
 		return position;
 	},
 	
 	// Calculate whether the given coordinate falls within this element's boundaries
 	contains: function(point) {
-		var topLeft = this.position();
-		var bottomRight = {
-			x: topLeft.x + this.element.offsetWidth,
-			y: topLeft.y + this.element.offsetHeight
-		};
+		if (this.element != null) {
+			var topLeft = this.position();
+			var bottomRight = {
+				x: topLeft.x + this.element.offsetWidth,
+				y: topLeft.y + this.element.offsetHeight
+			};
+			return (
+				topLeft.x < point.x
+				&& topLeft.y < point.y
+				&& point.x < bottomRight.x
+				&& point.y < bottomRight.y
+			);
 		
-		return (
-			topLeft.x < point.x
-			&& topLeft.y < point.y
-			&& point.x < bottomRight.x
-			&& point.y < bottomRight.y
-		);
+		}
+		
+		
 	},
 	
 	// Called when an item is dragged into this element
