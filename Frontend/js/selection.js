@@ -180,24 +180,23 @@ function mapDocumentTouchToMouse()
 }
 
 mapDocumentTouchToMouse();
-
 window.onload = function() {
 	var data = [
-		"These",
-		"Words",
-		"Can",
-		"Be",
-		"Dragged",
-		"And",
-		"Dropped",
-		"Over",
-		"On",
-		"The",
-		"Right",
-		"Side",
-		"Of",
-		"The",
-		"Screen"
+		"Golden Zephyr",
+		"Goofy's Sky School",
+		"Jessie's Critter Carousel",
+		"Guardians of the Galaxy",
+		"Incredicoaster",
+		"Jumpin' Jellyfish",
+		"Luigi's Rollickin' Roadsters",
+		"Mater's Graveyard JamBOOree",
+		"Monsters, Inc. Mike & Sulley to the Rescue!",
+		"Pixar Pal-A-Round – Swinging",
+		"Radiator Springs Racers",
+		"Soarin' Over California",
+		"Silly Symphony Swings",
+		"The Little Mermaid ~ Ariel's Undersea Adventure",
+		"Toy Story Midway Mania!"
 	];
 	
 	var availableMetrics = document.getElementById("available_metrics_list");
@@ -226,6 +225,12 @@ window.onload = function() {
 	});
 
     var selectedMetricsDroppable2 = new Droppable("next_metric2", function(draggable) {
+		if (this.element.parentNode !== draggable.element.parentNode) {
+			this.element.parentNode.insertBefore(draggable.element, this.element);
+		}
+	});
+
+	var selectedMetricsDroppable2 = new Droppable("next_metric3", function(draggable) {
 		if (this.element.parentNode !== draggable.element.parentNode) {
 			this.element.parentNode.insertBefore(draggable.element, this.element);
 		}
