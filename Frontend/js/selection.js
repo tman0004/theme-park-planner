@@ -225,10 +225,6 @@ window.onload = function() {
 		if (this.element.parentNode !== draggable.element.parentNode) {
 			this.element.parentNode.insertBefore(draggable.element, this.element);
 		}
-        let a = document.getElementById('selected_metrics_list').getElementsByTagName('li');
-        for (let i = 0; i < a.length-1; i++) {
-            console.log(a[i].firstChild.data);
-        }
 	});
 
     var selectedMetricsDroppable2 = new Droppable("next_metric2", function(draggable) {
@@ -246,4 +242,15 @@ window.onload = function() {
 	new Droppable("remove_metric", function(draggable) {
 		availableMetricsDroppable.onDragDrop(draggable);
 	});
+
+	var button = document.getElementById("algorithm_call")
+    button.onclick = planClick = function() {
+		const must_go_arr = [];
+		let c = document.getElementById('must_go_list').getElementsByTagName('li');
+        for (let i = 0; i <c.length-1; i++) {
+            must_go_arr.push(c[i].firstChild.data);
+        }
+		console.log(must_go_arr);
+
+    }
 };

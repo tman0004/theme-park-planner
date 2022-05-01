@@ -61,14 +61,14 @@ h4 {
 	width: 25%;
 }
 
-#selected_metrics_list {
+#skippable_rides_list, #hope_rides_list, #must_go_list {
 	margin: 5px;
 	border: 1px solid gray;
 	padding: 10px;
 	background-color: white;
 }
 
-#selected_metrics_list li {
+#skippable_rides_list li, #hope_rides_list li, #must_go_list li{
 	margin-top: -1px;
 	border: 1px solid gray;
 	padding: 5px;
@@ -76,7 +76,7 @@ h4 {
 	background-color: white;
 }
 
-#selected_metrics_list li:last-child {
+#skippable_rides_list li:last-child, #hope_rides_list li:last-child, #must_go_list li:last-child {
 	border: 1px dotted gray;
 }
 
