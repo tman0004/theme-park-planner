@@ -111,3 +111,13 @@ h4 {
 .dragOver {
 	background-color: rgb(232, 232, 255) !important;
 }
+
+.planResult {
+	width: 80%;
+	height: 70%;
+	margin: 10% auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	background-color: #F9F7F7;
+	border-radius: 2.5rem;
+  }

@@ -251,6 +251,9 @@ window.onload = function() {
             must_go_arr.push(c[i].firstChild.data);
         }
 		console.log(must_go_arr);
+		document.getElementsByClassName("planResult")
+		[0].style.display='block';
 
+		document.getElementById('hello').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 };
