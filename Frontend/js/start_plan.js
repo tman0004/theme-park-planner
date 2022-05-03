@@ -5,6 +5,14 @@ window.onload = function() {
 }
 
 function planClick () {
-    window.open("https://github.com/RyanLiu2015/theme-park-planner#planned-features")
+    window.open("http://localhost:8080")
+    // $.ajax({
+    //     url: "http://localhost:8080/greeting"
+    // }).then(function(data, status, jqxhr) {
+    //     console.log(data)
+    //    $('.greeting-id').append(data.id);
+    //    $('.greeting-content').append(data.content);
+    //    console.log(jqxhr);
+    // });
 }
 
