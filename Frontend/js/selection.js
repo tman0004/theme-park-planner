@@ -248,12 +248,21 @@ window.onload = function() {
 		const must_go_arr = [];
 		let c = document.getElementById('must_go_list').getElementsByTagName('li');
         for (let i = 0; i <c.length-1; i++) {
-            must_go_arr.push(c[i].firstChild.data);
+            must_go_arr.push(" " + c[i].firstChild.data);
         }
-		console.log(must_go_arr);
-		document.getElementsByClassName("planResult")
-		[0].style.display='block';
 
-		document.getElementById('hello').scrollIntoView({ behavior: 'smooth', block: 'center' });
+		document.getElementById("prl").innerHTML = must_go_arr;
+
+		const hope_arr = [];
+		let h = document.getElementById('hope_rides_list').getElementsByTagName('li');
+        for (let i = 0; i <h.length-1; i++) {
+            hope_arr.push(" " + h[i].firstChild.data);
+        }
+		document.getElementById("prl").innerHTML += ";" + hope_arr;
+
+		//console.log(must_go_arr);
+		document.getElementsByClassName("plan_result_window")[0].style.display='block';
+		
+		document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 };

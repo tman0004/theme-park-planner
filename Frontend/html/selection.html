@@ -57,14 +57,14 @@
 
         <div id="main_window">
             <div id="left_pane">
-                <h4>Ride List</h5>
+                <h3>Ride List</h3>
                 <div id="available_metrics_filter">
                     <ul id="available_metrics_list"> 
                     </ul>
                 </div>
             </div>
             <div id="right_pane">
-                <h4>Skippable Rides</h5>
+                <h3>Skippable Rides</h3>
                 <div id="selected_metrics">
                     <ul id="skippable_rides_list">
                         <li id="next_metric">Drag and drop a ride here</li>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div id="right_pane">
-                <h4>Hope to Go Rides</h5>
+                <h3>Hope to Go Rides</h3>
                 <div id="selected_metrics">
                     <ul id="hope_rides_list">
                         <li id="next_metric2">Drag and drop a ride here</li>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div id="right_pane">
-                <h4>Must-Go Rides</h5>
+                <h3>Must-Go Rides</h3>
                 <div id="selected_metrics">
                     <ul id="must_go_list">
                         <li id="next_metric3">Drag and drop a ride here</li>
@@ -96,8 +96,21 @@
                 </span>
             </button>
         </div>
-        <div class="planResult" id="hello" style="display:none">
-
+        <div class="plan_result_window" id="result" style="display:none">
+            <h3>Your prioritized rides:</h3>
+            <div class="plan_result_list" id="prl">
+                   <!-- <script>
+                     const must_go_arr = [];
+                     let c = document.getElementById('must_go_list').getElementsByTagName('li');
+                     for (let i = 0; i <c.length-1; i++) {
+                        document.getElementById("plan_result_list").innerHTML += [i].firstChild.data;
+                     }
+                    </script> -->
+            </div>
+            <h3>Suggested Ride Order:</h3>
+            <div class="plan_result_list" id="sgo">
+                <p>"Here"</p>
+            </div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
