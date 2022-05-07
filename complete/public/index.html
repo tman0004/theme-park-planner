@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello CORS</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="hello.js"></script>
-        <meta charset="UTF-8">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Park Planner</title>
@@ -15,64 +12,70 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/nav.css">
-    </head>
+    <script src="../js/nav.js"></script>
+</head>
+<body>
+    <div class="stageBox left sc5">
+        <!-- <div class="topContainer">
+            <div class="topLeftContainer">
+                <div class="squareLogo">
+                    <div class="squareLogoInner">
 
-    <body>
-        <div class="stageBox left sc5">
-            <!-- <div class="topContainer">
-                <div class="topLeftContainer">
-                    <div class="squareLogo">
-                        <div class="squareLogoInner">
-    
-                        </div>
-                    </div>
-                    <div class="mainTitle">
-                        <h1>Theme Park Planner</h1>
                     </div>
                 </div>
-                <div class="topRightContainer">
-                    <div class="rightUnselected">
-                        <a href="./html/signUp.html"><p><b>Sign Up</b></p></a>
-                        <a href="./html/signIn.html"><p><b>Sign In</b></p></a>
-                        <a href="./html/planner.html"><p><b>Planner</b></p></a>
-                    </div>
-                    <div class="rightSelected">
-                        <a href="index.html"><p><b>Welcome</b></p></a>
-                    </div>
-                </div>
-            </div> -->
-    
-            <nav class="nav">
-                <div class="container">
-                    <div class="logo">
-                        <img src="./pics/logo.png">
-                        <a href="index.html"><b>Theme Park Planner</b></a>
-                    </div>
-                    <div id="mainListDiv" class="main_list">
-                        <ul class="navlinks">
-                            <li><a href="index.html"><p><b>Welcome</b></p></a></li>
-                            <li><a href="./html/planner.html"><p><b>Planner</b></p></a></li>
-                            <li><a href="./html/signUp.html"><p><b>Sign Up</b></p></a></li>
-                            <li><a href="./html/signIn.html"><p><b>Sign In</b></p></a></li>
-                        </ul>
-                    </div>
-                    <span class="navTrigger">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                    </span>
-                </div>
-            </nav>
-    
-            <div class="middleContainer">
-                <div class="pitchText">
-                    <h1>Your all-in-one itinerary planner.</h1>
-                    <button class="button-29" role="button" id = "main_button">Plan your itinerary now!</button>
-                </div>
-                <div class="castle">
-                    <img src="./pics/castle.png">
+                <div class="mainTitle">
+                    <h1>Theme Park Planner</h1>
                 </div>
             </div>
+            <div class="topRightContainer">
+                <div class="rightUnselected">
+                    <a href="./html/signUp.html"><p><b>Sign Up</b></p></a>
+                    <a href="./html/signIn.html"><p><b>Sign In</b></p></a>
+                    <a href="./html/planner.html"><p><b>Planner</b></p></a>
+                </div>
+                <div class="rightSelected">
+                    <a href="index.html"><p><b>Welcome</b></p></a>
+                </div>
+            </div>
+        </div> -->
+
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <img src="./pics/logo.png">
+                    <a href="index.html"><b>Theme Park Planner</b></a>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="index.html"><p><b>Welcome</b></p></a></li>
+                        <li><a href="./html/planner.html"><p><b>Planner</b></p></a></li>
+                        <li><a href="./html/selection.html"><p><b>Selection</b></p></a></li>
+                        <li><a href="./html/signUp.html"><p><b>Sign Up</b></p></a></li>
+                        <li><a href="./html/signIn.html"><p><b>Sign In</b></p></a></li>
+                    </ul>
+                </div>
+                <span class="navTrigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+
+        <div class="middleContainer">
+            <div class="pitchText">
+                <h1>Your all-in-one itinerary planner.</h1>
+                <button class="button-29" role="button" id = "main_button">Plan your itinerary now!</button>
+            </div>
+            <div class="castle">
+                <img src="./pics/castle.png">
+            </div>
         </div>
-    </body>
+    </div>
+</body>
+<script type="text/javascript">
+    document.getElementById("main_button").onclick = function () {
+        location.href = "./html/planner.html";
+    };
+</script>
 </html>

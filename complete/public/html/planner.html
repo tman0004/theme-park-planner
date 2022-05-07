@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Park Planner</title>
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/planner.css">
+    <link rel="stylesheet" type="text/css" href="../css/map.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="../js/map.js"></script>
+    <script src="../js/start_plan.js"></script>
+    
+</head>
+
+<body>
+    <div class="stageBox left sc5" >
+
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <img src="../pics/logo.png">
+                    <a href="../index.html"><b>Theme Park Planner</b></a>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="../index.html"><p><b>Welcome</b></p></a></li>
+                        <li><a href="planner.html"><p><b>Planner</b></p></a></li>
+                        <li><a href="selection.html"><p><b>Selection</b></p></a></li>
+                        <li><a href="signUp.html"><p><b>Sign Up</b></p></a></li>
+                        <li><a href="signIn.html"><p><b>Sign In</b></p></a></li>
+                    </ul>
+                </div>
+                <span class="navTrigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+
+        <div class="listWrapper">
+
+
+
+
+            <div class="left sc5" id="left_scroll">
+                <div class="drop">
+
+                    <div class="drop__container" id="drop-items">
+                        <div class="drop__card" onclick = "moveToLocation(33.806053,-117.922291);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/golden-zephyr.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Golden Zephyr</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/golden-zephyr/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+        
+                        <div class="drop__card" onclick = "moveToLocation(33.806266,-117.922837);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/goofys-sky-school.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Goofy's Sky School</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/goofys-sky-school/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.804691,-117.921217);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/jessies-critter-carousel.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Jessie's Critter Carousel</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/jessies-critter-carousel/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="drop__card" onclick = "moveToLocation(33.806881,-117.917179);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/guardians-of-the-galaxy-mission-breakout.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Guardians of the Galaxy</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/guardians-galaxy-mission-breakout/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="drop__card" onclick = "moveToLocation(33.804642,-117.920575);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/incredicoaster-face-covering.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Incredicoaster</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/incredicoaster/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+
+                        <div class="drop__card" onclick = "moveToLocation(33.806009,-117.922593);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/jumpin-jellyfish.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Jumpin' Jellyfish</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/jumpin-jellyfish/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.805404,-117.918518);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/luigis-rollickin-roadsters.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Luigi's Rollickin' Roadsters</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/luigis-rollickin-roadsters/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.806417,-117.919249);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/maters-junkyard-jamboree.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Mater's Graveyard JamBOOree</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/maters-graveyard-jam-boo-ree/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+
+                        <div class="drop__card" onclick = "moveToLocation(33.808228,-117.917497);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/monsters-inc.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Monsters, Inc. Mike & Sulley to the Rescue!</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/monsters-inc/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.805060,-117.922321);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/pixar-pal-around-night.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Pixar Pal-A-Round – Swinging</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/pixar-pal-a-round-swinging/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.804692,-117.919084);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/radiator-springs-racers.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Radiator Springs Racers</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="radiator_springs_racers,https://disneyland.disney.go.com/attractions/disney-california-adventure/radiator-springs-racers/
+                                " target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.808234,-117.920233);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/soarin-over-california.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">
+                                        Soarin' Over California</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/soarin-over-california/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.805547,-117.922974);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/silly-symphony-swings.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Silly Symphony Swings</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/silly-symphony-swings/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                        <div class="drop__card" onclick = "moveToLocation(33.806150,-117.921038);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/little-mermaid-ariels-undersea-adventure.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">The Little Mermaid ~ Ariel's Undersea Adventure</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/little-mermaid-ariels-undersea-adventure/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="drop__card" onclick = "moveToLocation(33.804676,-117.921592);">
+                            <div class="drop__data">
+                                <img src="../pics/thumbnails/toy-story-mania.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">Toy Story Midway Mania!</h1>
+                                    
+                                </div>
+                            </div>
+        
+                            <div>
+                                <a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/toy-story-mania/" target="_blank" class="drop__social"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="right">
+                <div id="map"></div>
+
+                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_Nm-0wy_na3aHj6Zxva0kEVgOWDWVUB4&callback=initMap&v=weekly"
+                    async></script>
+            </div>
+        </div>
+
+
+
+
+        <!-- <div class="grid">
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/golden-zephyr.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Golden Zephyr</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/goofys-sky-school.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Goofy's Sky School</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/jessies-critter-carousel.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Jessie's Critter Carousel</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/guardians-of-the-galaxy-mission-breakout.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Guardians of the Galaxy</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/incredicoaster-face-covering.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Incredicoaster</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/jumpin-jellyfish.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Jumpin' Jellyfish</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/luigis-rollickin-roadsters.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Luigi's Rollickin' Roadsters</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/maters-junkyard-jamboree.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Mater's Graveyard JamBOOree</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/monsters-inc.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Monsters, Inc. Mike & Sulley to the Rescue!</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/pixar-pal-around-night.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Pixar Pal-A-Round – Swinging</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/radiator-springs-racers.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Radiator Springs Racers</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/soarin-over-california.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">
+                            Soarin' Over California</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/silly-symphony-swings.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Silly Symphony Swings</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/little-mermaid-ariels-undersea-adventure.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">The Little Mermaid ~ Ariel's Undersea Adventure</h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="favorite_block">
+                <div class="favorite">
+                    <img src="../pics/thumbnails/toy-story-mania.jpg" alt="" class="favorite_img">
+                    <div>
+                        <h1 class="favorite__name">Toy Story Midway Mania!</h1>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div> -->
+
+        <div class="button_container">
+            <button class="plan_button" id="start_plan_button">
+                <span class="button_text" >Start Planning</span>
+                <span class="button_icon" >
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </span>
+            </button>
+        </div>
+
+    </div>make
+<!--===== SORTABLE JS =====-->
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+<!--===== MAIN JS =====-->
+<script src="../js/dropItem.js"></script>
+
+<script type="text/javascript">
+	function moveToLocation(a, b){
+	map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: a, lng: b },
+    zoom: 20,
+  });
+}
+</script>
+
+<!--===== ionicon =====-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!--===== Muuri =====-->
+<script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+
+<script>
+    const grid = new Muuri('.grid', {
+        dragEnabled: true
+    });
+
+</script>
+
+</body>
+
+</html>

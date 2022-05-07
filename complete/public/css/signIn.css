@@ -1,0 +1,28 @@
+.formInput {
+  margin: 15% auto;
+  width: 200px;
+}
+.formInput p {
+  color: white;
+  font-size: 10pt;
+  margin-bottom: 2%;
+}
+.formInput input {
+  width: 220px;
+  height: 25px;
+  border: 0;
+  outline: none;
+  margin-bottom: 3%;
+  border-radius: 6px;
+  padding-left: 10px;
+}
+.formInput button {
+  width: 220px;
+  height: 25px;
+  margin-top: 10%;
+  background-color: #345aa4;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  color: white;
+}
