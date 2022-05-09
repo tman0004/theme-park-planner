@@ -247,9 +247,12 @@ window.onload = function() {
     button.onclick = planClick = function() {
 		fetch("http://localhost:8080/greeting")
 		.then(data => {return data.json()})
-		.then(res => {console.log(res)})
+		.then(res => {
+			document.getElementById("sgo").innerHTML = res.content;
+
+		})
 		.catch(error => console.log(error))
-		
+
 		const must_go_arr = [];
 		let c = document.getElementById('must_go_list').getElementsByTagName('li');
         for (let i = 0; i <c.length-1; i++) {
