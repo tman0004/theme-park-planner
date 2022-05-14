@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
+import pathing.*;
 @RestController
 public class GreetingController {
 
@@ -46,6 +45,7 @@ public class GreetingController {
 		ride.setId(UUID.randomUUID().toString());
 		db.put(ride.getId(), ride);
 		System.out.println(ride.getName());
+		Pathfinding p = new Pathfinding();
 		return ride;
 	}
 
