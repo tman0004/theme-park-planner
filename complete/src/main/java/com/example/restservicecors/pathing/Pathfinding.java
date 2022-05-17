@@ -28,11 +28,11 @@ public class Pathfinding {
 	public Pathfinding() {
 		// build graph
 		System.out.println("fix file structure stuff here.");
-//		buildGraph("complete/src/main/java/com/example/restservicecors/graph_meta.txt");
-//		loadTimes("restservicecors/wait_times.csv");
-//		loadMeta("restservicecors/meta_info.txt");
-//		findShortestWalks();
-//		addBreaks();
+		buildGraph("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/graph_meta.txt");
+		loadTimes("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/wait_times.csv");
+		loadMeta("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/meta_info.txt");
+		findShortestWalks();
+		addBreaks();
 		// addMealBreaks();
 	}
 	

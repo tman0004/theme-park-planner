@@ -46,6 +46,7 @@ public class GreetingController {
 		db.put(ride.getId(), ride);
 		System.out.println(ride.getName());
 		Pathfinding p = new Pathfinding();
+		p.findOptimalPath("entrance");
 		return ride;
 	}
 
