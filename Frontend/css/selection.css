@@ -63,6 +63,7 @@ h3 {
 	padding: 15px;
 	list-style-type: none;
 	background-color: white;
+	cursor: move;
 }
 
 #right_pane {
@@ -104,14 +105,17 @@ h3 {
 	padding: 15px;
 	list-style-type: none;
 	background-color: white;
+	cursor: move;
 }
 
 #skippable_rides_list li:last-child, #hope_rides_list li:last-child, #must_go_list li:last-child {
 	border: 1px dotted gray;
+	cursor: default;
 }
 
 #next_metric {
 	color: gray;
+	cursor: default;
 }
 
 #next_metric2 {
@@ -183,4 +187,5 @@ h3 {
 	padding: 15px;
 	list-style-type: none;
 	background-color: white;
+	cursor: pointer;
 }
