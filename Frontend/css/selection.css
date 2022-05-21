@@ -71,6 +71,12 @@ h3 {
 	padding:5px;
 }
 
+#output_pane {
+	float: left;
+	width: 35%;
+	padding-left: 25px;
+}
+
 #skippable_rides_list, #hope_rides_list, #must_go_list {
 	margin: 5px;
 	border-radius: 10px;
@@ -92,7 +98,7 @@ h3 {
 	background: linear-gradient(90deg, rgba(125,206,255,1) 27%, rgba(125,255,140,1) 83%);
 }
 
-#skippable_rides_list li, #hope_rides_list li, #must_go_list li{
+#skippable_rides_list li, #hope_rides_list li, #must_go_list li {
 	margin-top: -1px;
 	border: 1px solid rgb(154, 194, 212);
 	padding: 15px;
@@ -136,7 +142,7 @@ h3 {
 
 .plan_result_window {
 	width: 80%;
-	height: 70%;
+	height: 80%;
 	padding:10px;
 	margin: 10% auto;
 	margin-top: 5%;
@@ -150,4 +156,31 @@ h3 {
 	border: 1px solid gray;
 	padding: 5px;
 	background-color: rgb(230, 230, 230)
+}
+
+.right {
+	float: right;
+	width: 60%;
+	height: 90%;	
+	border-radius: 2.5rem;
+	padding: 10px;
+}
+
+#output_metrics {
+	margin: 5px;
+	border-radius: 10px;
+	padding: 10px 2rem 10px 0px;
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	height: 600px;
+}
+
+#output li {
+	margin-top: 1rem;
+	border: 1px solid rgb(154, 194, 212);
+	padding: 15px;
+	list-style-type: none;
+	background-color: white;
 }
