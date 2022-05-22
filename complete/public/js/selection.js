@@ -256,6 +256,18 @@ window.onload = function() {
 
 
 
+		
+
+
+		const must_go_arr = [];
+		let c = document.getElementById('must_go_list').getElementsByTagName('li');
+        for (let i = 0; i <c.length-1; i++) {
+            must_go_arr.push({name: c[i].firstChild.data});
+        }
+
+		console.log("must go is ", must_go_arr);
+
+
 		async function postData(url = '', data = {}) {
 			// Default options are marked with *
 			const response = await fetch(url, {
@@ -274,19 +286,12 @@ window.onload = function() {
 			return response.json(); // parses JSON response into native JavaScript objects
 		  }
 		  
-		  postData('http://localhost:8080/rides', { name: "jessie's critter carousel" })
+		  postData('http://localhost:8080/rides', must_go_arr )
 			.then(data => {
 			  console.log(data); // JSON data parsed by `data.json()` call
 			});
-
-
-		const must_go_arr = [];
-		let c = document.getElementById('must_go_list').getElementsByTagName('li');
-        for (let i = 0; i <c.length-1; i++) {
-            must_go_arr.push(" " + c[i].firstChild.data);
-        }
-
-		document.getElementById("prl").innerHTML = must_go_arr;
+		
+		document.getElementById("prl").innerHTML = must_go_arr.map(obj => obj.name);
 
 		const hope_arr = [];
 		let h = document.getElementById('hope_rides_list').getElementsByTagName('li');

@@ -3,6 +3,8 @@ package com.example.restservicecors;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.http.HttpStatus;
@@ -13,9 +15,7 @@ import pathing.*;
 public class GreetingController {
 
 	private static final String template = "Jumpin' Jellyfish -> Luigi's Rollickin' Roadsters -> Mater's Graveyard JamBOOree";
-	private Map<String, Ride> db = new HashMap<String, Ride>(){{
-		put("1", new Ride("1", "Jumpin' Jellyfish"));
-	}};
+	private Map<String, ArrayList<Ride>> db = new HashMap<String, ArrayList<Ride>>();
 
 	private final AtomicLong counter = new AtomicLong();
 
@@ -28,26 +28,30 @@ public class GreetingController {
 
 
 	@GetMapping("/rides")
-	public Collection<Ride> get(){
+	public Collection<ArrayList<Ride>> get(){
 		return db.values();
 	}
 
 	@DeleteMapping("/rides/{id}")
 	public void delete(@PathVariable String id){
-		Ride ride = db.remove(id);
-		if(ride == null){
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-		}
+//		Ride ride = db.remove(id);
+//		if(ride == null){
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//		}
 	}
 
 	@PostMapping("/rides")
-	public Ride create(@RequestBody Ride ride){
-		ride.setId(UUID.randomUUID().toString());
-		db.put(ride.getId(), ride);
-		System.out.println(ride.getName());
-		Pathfinding p = new Pathfinding();
-		p.findOptimalPath("entrance");
-		return ride;
+	public List<Ride> create(@RequestBody ArrayList<Ride> rides){
+		System.out.println("post request");
+//		System.out.println(ride.getName());
+//		System.out.println(ride.getId());
+		for(Ride ride : rides){
+			System.out.println(ride.getName());
+		}
+//		db.put("mustGo", rides);
+		//		Pathfinding p = new Pathfinding();
+		//		p.findOptimalPath("entrance");
+		return new ArrayList<>();
 	}
 
 
