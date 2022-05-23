@@ -185,6 +185,31 @@ function mapDocumentTouchToMouse()
     document.addEventListener("touchend", touchHandler, true);
     document.addEventListener("touchcancel", touchHandler, true);    
 }
+var dict = {
+	"Golden Zephyr": [33.806053,-117.922291],
+	"Goofy's Sky School": [33.806266,-117.922837],
+	"Jessie's Critter Carousel": [33.804691,-117.921217],
+	"Guardians of the Galaxy":  [33.806881,-117.917179],
+	"Incredicoaster": [33.804642,-117.920575],
+	"Jumpin' Jellyfish": [33.806009,-117.922593],
+	"Luigi's Rollickin' Roadsters": [33.805404,-117.918518],
+	"Mater's Graveyard JamBOOree": [33.806417,-117.919249],
+	"Monsters, Inc. Mike & Sulley to the Rescue!": [33.808228,-117.917497],
+	"Pixar Pal-A-Round – Swinging": [33.805060,-117.922321],
+	"Radiator Springs Racers": [33.804692,-117.919084],
+	"Soarin' Over California": [33.808234,-117.920233],
+	"Silly Symphony Swings": [33.805547,-117.922974],
+	"The Little Mermaid ~ Ariel's Undersea Adventure": [33.806150,-117.921038],
+	"Toy Story Midway Mania!": [33.804676,-117.921592]
+};
+
+function locateMap() {
+	var key = event.target.innerText;
+	map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: dict[key][0], lng: dict[key][1] },
+        zoom: 20,
+	});
+};
 
 mapDocumentTouchToMouse();
 window.onload = function() {
@@ -243,6 +268,7 @@ window.onload = function() {
 		availableMetricsDroppable.onDragDrop(draggable);
 	});
 
+
 	var button = document.getElementById("algorithm_call")
     button.onclick = planClick = function() {
 		const must_go_arr = [];
@@ -251,14 +277,24 @@ window.onload = function() {
             must_go_arr.push(" " + c[i].firstChild.data);
         }
 
-		document.getElementById("prl").innerHTML = must_go_arr;
+		//document.getElementById("prl").innerHTML = must_go_arr;
 
 		const hope_arr = [];
 		let h = document.getElementById('hope_rides_list').getElementsByTagName('li');
         for (let i = 0; i <h.length-1; i++) {
             hope_arr.push(" " + h[i].firstChild.data);
         }
-		document.getElementById("prl").innerHTML += ";" + hope_arr;
+		//document.getElementById("prl").innerHTML += ";" + hope_arr;
+
+		var ul = document.createElement('ul');
+		document.getElementById('output').appendChild(ul);
+ 
+		must_go_arr.forEach(function(must_go){
+			var li = document.createElement('li');
+			ul.appendChild(li);
+			li.innerHTML += must_go;
+		});
+
 
 		//console.log(must_go_arr);
 		document.getElementsByClassName("plan_result_window")[0].style.display='block';
