@@ -21,7 +21,6 @@ h3 {
 
 #main_window {
 	width: 1300px;
-	height: 80%;
 	margin: 10% auto;
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -41,53 +40,82 @@ h3 {
 	padding:5px;
 }
 
-#available_metrics_filter {
+/*#available_metrics_filter {
 	margin: 5px;
 	border: 1px solid gray;
 	padding: 8px;
 	background-color: rgb(230, 230, 230);
-}
+}*/
 
 #available_metrics_list {
-	border: 1px solid gray;
-	padding: 10px;
-	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	/*background-color: red;*/
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
 }
+
 
 #available_metrics_list li {
 	margin-top: -1px;
-	border: 1px solid gray;
-	padding: 5px;
+	border: 1px solid rgb(154, 194, 212);
+	padding: 15px;
 	list-style-type: none;
 	background-color: white;
+	cursor: move;
 }
 
 #right_pane {
 	float: left;
 	width: 25%;
+	padding:5px;
+}
+
+#output_pane {
+	float: left;
+	width: 35%;
+	padding-left: 25px;
 }
 
 #skippable_rides_list, #hope_rides_list, #must_go_list {
 	margin: 5px;
-	border: 1px solid gray;
-	padding: 10px;
-	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 }
 
-#skippable_rides_list li, #hope_rides_list li, #must_go_list li{
+#skippable_rides_list {
+	background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+}
+
+#hope_rides_list {
+	background: linear-gradient(90deg, rgba(255,170,22,1) 20%, rgba(235,244,38,1) 91%);
+}
+
+#must_go_list {
+	background: linear-gradient(90deg, rgba(125,206,255,1) 27%, rgba(125,255,140,1) 83%);
+}
+
+#skippable_rides_list li, #hope_rides_list li, #must_go_list li {
 	margin-top: -1px;
-	border: 1px solid gray;
-	padding: 5px;
+	border: 1px solid rgb(154, 194, 212);
+	padding: 15px;
 	list-style-type: none;
 	background-color: white;
+	cursor: move;
 }
 
 #skippable_rides_list li:last-child, #hope_rides_list li:last-child, #must_go_list li:last-child {
 	border: 1px dotted gray;
+	cursor: default;
 }
 
 #next_metric {
 	color: gray;
+	cursor: default;
 }
 
 #next_metric2 {
@@ -118,7 +146,7 @@ h3 {
 
 .plan_result_window {
 	width: 80%;
-	height: 70%;
+	height: 80%;
 	padding:10px;
 	margin: 10% auto;
 	margin-top: 5%;
@@ -132,4 +160,32 @@ h3 {
 	border: 1px solid gray;
 	padding: 5px;
 	background-color: rgb(230, 230, 230)
+}
+
+.right {
+	float: right;
+	width: 60%;
+	height: 90%;	
+	border-radius: 2.5rem;
+	padding: 10px;
+}
+
+#output_metrics {
+	margin: 5px;
+	border-radius: 10px;
+	padding: 10px 2rem 10px 0px;
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	height: 600px;
+}
+
+#output li {
+	margin-top: 1rem;
+	border: 1px solid rgb(154, 194, 212);
+	padding: 15px;
+	list-style-type: none;
+	background-color: white;
+	cursor: pointer;
 }
