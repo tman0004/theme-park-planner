@@ -49,8 +49,10 @@ public class GreetingController {
 			System.out.println(ride.getName());
 		}
 //		db.put("mustGo", rides);
-		//		Pathfinding p = new Pathfinding();
-		//		p.findOptimalPath("entrance");
+		Pathfinding p = new Pathfinding();
+		ArrayList<Pair<String,Integer>> path = p.findOptimalPath("entrance");
+		System.out.println("Final path from Spring Boot is ");
+		System.out.println(path);
 		return new ArrayList<>();
 	}
 

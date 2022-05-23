@@ -256,7 +256,7 @@ public class Pathfinding {
 	/**
 	 * Find the optimal path to take.
 	 */
-	public void findOptimalPath(String current) {
+	public ArrayList<Pair<String,Integer>> findOptimalPath(String current) {
 		// initialize distances and predecessors
 		HashMap<Pair<String,Integer>,Double> distances = new HashMap<Pair<String,Integer>,Double>();
 		HashMap<Pair<String,Integer>,Pair<String,Integer>> predecessors = new HashMap<Pair<String,Integer>,Pair<String,Integer>>();
@@ -273,7 +273,7 @@ public class Pathfinding {
 		distances.replace(new Pair<String,Integer>(current + " " + time, time), 0.0);
 		
 		// perform |V|-1 times (graph.size()*timeLimit)-1
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 25; i++) {
 			System.out.println("Iteration " + i + " of " + ((graph.size()*timeLimit)-1));
 			// for each edge (consider edge directed)
 			for (Vertex u : graph.values()) {
@@ -446,9 +446,10 @@ public class Pathfinding {
 		}
 		
 		Collections.reverse(path);
-		System.out.println("Satisfaction: " + (-bestSatisfaction));
-		System.out.println("Number of rides: " + path.size());
-		System.out.println("Path: " + path);
+//		System.out.println("Satisfaction: " + (-bestSatisfaction));
+//		System.out.println("Number of rides: " + path.size());
+//		System.out.println("Path: " + path);
+		return path;
 		
 	}
 	
@@ -464,9 +465,5 @@ public class Pathfinding {
 		// s = 10 - s;
 		// return 10-(Math.pow(s+1, 2)/10);
 	}
-	
-	public static void main(String[] args) {
-		Pathfinding pathfinder = new Pathfinding();
-		pathfinder.findOptimalPath("entrance");
-	}
+
 }
