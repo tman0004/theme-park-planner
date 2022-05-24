@@ -27,7 +27,6 @@ public class Pathfinding {
 	 */
 	public Pathfinding() {
 		// build graph
-		System.out.println("fix file structure stuff here.");
 		buildGraph("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/graph_meta.txt");
 		loadTimes("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/wait_times.csv");
 		loadMeta("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/meta_info.txt");
@@ -35,10 +34,10 @@ public class Pathfinding {
 		addBreaks();
 		// addMealBreaks();
 	}
-	
+
 	/**
 	 * Auxiliary function to build graph
-	 * 
+	 *
 	 * @param filename the graph txt file
 	 */
 	private void buildGraph(String filename) {
@@ -50,7 +49,7 @@ public class Pathfinding {
 				// name handling
 				String[] splitName = line.split(":");
 				String name = splitName[0];
-				
+
 				// neighbor handling
 				String[] splitNeigh = splitName[1].split(",");
 				HashMap<String,Double> neighbors = new HashMap<String,Double>();
@@ -59,15 +58,15 @@ public class Pathfinding {
 					String[] neighborInfo = splitNeigh[i].split("\\s");
 					neighbors.put(neighborInfo[0], Math.ceil(4*Double.parseDouble(neighborInfo[1])/3));
 				}
-				
+
 				// build and insert vertex
 				Vertex v = new Vertex(name, neighbors);
 				graph.put(name, v);
 			}
-			
+
 			// close file
 			br.close();
-		
+
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found!");
 			System.exit(1);
@@ -76,10 +75,10 @@ public class Pathfinding {
 			System.exit(1);
 		}
 	}
-	
+
 	/**
 	 * Auxiliary function to load graph times
-	 * 
+	 *
 	 * @param filename the times csv file
 	 */
 	private void loadTimes(String filename) {
@@ -90,7 +89,7 @@ public class Pathfinding {
 				// split raws
 				String[] rawTimes = line.split(",");
 				Vertex v = graph.get(rawTimes[0]); // get vertex to modify
-				
+
 				// build times array
 				ArrayList<Double> waitTimes = new ArrayList<Double>();
 				for (int i = 1; i < rawTimes.length; i++) {
@@ -100,14 +99,14 @@ public class Pathfinding {
 						waitTimes.add(-1.0);
 					}
 				}
-				
+
 				// set times
 				v.setWaitTimes(waitTimes);
 			}
-			
+
 			// close file
 			br.close();
-		
+
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found!");
 			System.exit(1);
@@ -116,10 +115,10 @@ public class Pathfinding {
 			System.exit(1);
 		}
 	}
-	
+
 	/**
 	 * Auxiliary function to load meta information
-	 * 
+	 *
 	 * @param filename the meta txt file
 	 */
 	private void loadMeta(String filename) {
@@ -130,15 +129,15 @@ public class Pathfinding {
 				// split info
 				String[] info = line.split(",");
 				Vertex v = graph.get(info[0]); // get vertex to modify
-				
+
 				// add info
 				v.setSatisfaction(-Double.parseDouble(info[1]));
 				v.setDuration(2+Integer.parseInt(info[2]));
 			}
-			
+
 			// close file
 			br.close();
-		
+
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found!");
 			System.exit(1);
@@ -147,7 +146,7 @@ public class Pathfinding {
 			System.exit(1);
 		}
 	}
-	
+
 	/**
 	 * Performs the Bellman-Ford algorithm
 	 * to find the shortest paths between
@@ -157,7 +156,7 @@ public class Pathfinding {
 	private void findShortestWalks() {
 		// initialize distances
 		HashMap<String,Double> distances = new HashMap<String,Double>();
-		
+
 		// bellman-ford for each vertex
 		for (String current : graph.keySet()) {
 			// clear distances
@@ -166,7 +165,7 @@ public class Pathfinding {
 				distances.put(v, 999.9);
 			}
 			distances.replace(current, 0.0);
-			
+
 			// perform |V|-1 times
 			for (int i = 0; i < graph.size()-1; i++) {
 				// for each edge (consider edge directed)
@@ -178,12 +177,12 @@ public class Pathfinding {
 					}
 				}
 			}
-			
+
 			// reformulate edges of this vertex
 			graph.get(current).setWalkTimes(new HashMap<String,Double>(distances));
 		}
 	}
-	
+
 	/**
 	 * Adds break vertices to each ride
 	 * in the graph.
@@ -195,7 +194,7 @@ public class Pathfinding {
 			// break vertex name
 			String bv = v + "*";
 			Vertex originalVertex = graph.get(v);
-			
+
 			// create break vertex and add to graph
 			Vertex breakVertex = new Vertex(bv, graph.get(v));
 			breakVertex.setSatisfaction(-45); // large satisfaction makes it pseudo required
@@ -210,16 +209,16 @@ public class Pathfinding {
 			breakVertex.setWaitTimes(zeroWeight); // no wait to take break
 			breakVertex.setDuration(60); // 60 minute breaks
 			graph.put(bv, breakVertex);
-			
+
 			// add 0 weight edge from original to break vertex
 			HashMap<String,Double> distances = originalVertex.getWalkTimes();
 			distances.put(bv, 0.0);
 			originalVertex.setWalkTimes(distances);
 		}
 	}
-	
+
 	/**
-	 * Adds meal break vertices to 
+	 * Adds meal break vertices to
 	 * each ride in the graph.
 	 * Unused and incorrect!
 	 */
@@ -230,7 +229,7 @@ public class Pathfinding {
 			// break vertex name
 			String bv = v + "#";
 			Vertex originalVertex = graph.get(v);
-			
+
 			// create break vertex and add to graph
 			Vertex breakVertex = new Vertex(bv, graph.get(v));
 			breakVertex.setSatisfaction(-30); // large satisfaction makes it pseudo required
@@ -245,14 +244,14 @@ public class Pathfinding {
 			breakVertex.setWaitTimes(zeroWeight); // no wait to take break
 			breakVertex.setDuration(45); // thirty minute breaks
 			graph.put(bv, breakVertex);
-			
+
 			// add 0 weight edge from original to break vertex
 			HashMap<String,Double> distances = originalVertex.getWalkTimes();
 			distances.put(bv, 0.0);
 			originalVertex.setWalkTimes(distances);
 		}
 	}
-	
+
 	/**
 	 * Find the optimal path to take.
 	 */
@@ -271,9 +270,9 @@ public class Pathfinding {
 			}
 		}
 		distances.replace(new Pair<String,Integer>(current + " " + time, time), 0.0);
-		
+
 		// perform |V|-1 times (graph.size()*timeLimit)-1
-		for (int i = 0; i < 25; i++) {
+		for (int i = 0; i < 10; i++) {
 			System.out.println("Iteration " + i + " of " + ((graph.size()*timeLimit)-1));
 			// for each edge (consider edge directed)
 			for (Vertex u : graph.values()) {

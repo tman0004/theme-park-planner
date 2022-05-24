@@ -1,11 +1,6 @@
 package com.example.restservicecors;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +9,39 @@ import pathing.*;
 @RestController
 public class GreetingController {
 
+	class NewPair implements Comparable<NewPair>{
+		private Ride r;
+		private int order;
+
+		NewPair(Ride ride, int order){
+			r = ride;
+			this.order = order;
+		}
+
+		public Ride getR() {
+			return r;
+		}
+
+		@Override
+		public int compareTo(NewPair o) {
+			if(this.order > o.order){
+				return 1;
+			}
+			else if(this.order <  o.order){
+				return -1;
+			}
+			return 0;
+		}
+
+		public String toString(){
+			return r.getName();
+		}
+	}
+
+
 	private static final String template = "Jumpin' Jellyfish -> Luigi's Rollickin' Roadsters -> Mater's Graveyard JamBOOree";
 	private Map<String, ArrayList<Ride>> db = new HashMap<String, ArrayList<Ride>>();
+
 
 	private final AtomicLong counter = new AtomicLong();
 
@@ -48,12 +74,47 @@ public class GreetingController {
 		for(Ride ride : rides){
 			System.out.println(ride.getName());
 		}
+		Map<String, String> ridesMap = initializeRides();
+
 //		db.put("mustGo", rides);
 		Pathfinding p = new Pathfinding();
 		ArrayList<Pair<String,Integer>> path = p.findOptimalPath("entrance");
-		System.out.println("Final path from Spring Boot is ");
-		System.out.println(path);
-		return new ArrayList<>();
+		Map<String, Integer> rideToOrder = new HashMap<>();
+		Map<String, String> closest = findClosest();
+		int order = 0;
+		for(Pair<String,Integer> pair : path){
+			String backString = pair.getX().replaceAll("[^A-Za-z]+", "");
+			if(!rideToOrder.containsKey(backString)){
+				rideToOrder.put(backString, order);
+				order++;
+			}
+			else{
+				if(closest.containsKey(backString)){
+					rideToOrder.put(closest.get(backString), order);
+					order++;
+				}
+
+			}
+		}
+		List<NewPair> sortedPath = new ArrayList<>();
+
+		for(Ride ride : rides){
+			String backString = ridesMap.get(ride.getName());
+			NewPair pair = new NewPair(ride, rideToOrder.get(backString));
+
+			sortedPath.add(pair);
+		}
+		Collections.sort(sortedPath);
+		System.out.println("Final Path is ");
+		List<Ride> res = new ArrayList<>();
+		for(NewPair np : sortedPath){
+			res.add(np.getR());
+		}
+		for(Ride r : res){
+			System.out.println(r.getName());
+		}
+
+		return res;
 	}
 
 
@@ -61,6 +122,47 @@ public class GreetingController {
 	public Greeting greetingWithJavaconfig(@RequestParam(required = false, defaultValue = "World") String name) {
 		System.out.println("==== in greeting ====");
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	}
+
+	Map<String, String> initializeRides(){
+		Map<String, String> res = new HashMap<>();
+
+		res.put("Golden Zephyr", "goldenzephyr");
+		res.put("Guardians of the Galaxy", "guardiansofthegalaxy");
+		res.put("Incredicoaster", "incredicoaster");
+		res.put("Mater's Graveyard JamBOOree", "matersjunkyardjamboree");
+		res.put("Monsters, Inc. Mike & Sulley to the Rescue!", "monstersinc");
+		res.put("Pixar Pal-A-Round – Swinging", "pixarpalaround");
+		res.put("Radiator Springs Racers", "radiatorspringsracers");
+		res.put("Soarin' Over California", "soarin");
+		res.put("The Little Mermaid ~ Ariel's Undersea Adventure", "thelittlemermaid");
+		res.put("Toy Story Midway Mania!", "midwaymania");
+
+		res.put("Silly Symphony Swings", "Silly Symphony Swings");
+		res.put("Goofy's Sky School", "Goofy's Sky School");
+		res.put("Jessie's Critter Carousel", "Jessie's Critter Carousel");
+		res.put("Luigi's Rollickin' Roadsters", "Luigi's Rollickin' Roadsters");
+		res.put("Jumpin' Jellyfish", "Jumpin' Jellyfish");
+
+
+
+
+
+		return res;
+
+	}
+
+	Map<String, String> findClosest(){
+		Map<String, String> map = new HashMap<>();
+
+		map.put("pixarpalaround", "Silly Symphony Swings");
+		map.put("goldenzephyr", "Goofy's Sky School");
+		map.put("midwaymania", "Jessie's Critter Carousel");
+		map.put("incredicoaster", "Luigi's Rollickin' Roadsters");
+		map.put("thelittlemermaid", "Jumpin' Jellyfish");
+
+		return map;
+
 	}
 
 }

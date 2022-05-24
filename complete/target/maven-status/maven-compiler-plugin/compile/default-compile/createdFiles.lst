@@ -1,6 +1,1 @@
-pathing\Vertex.class
-pathing\Pair.class
-pathing\Pathfinding.class
-com\example\restservicecors\Ride.class
-pathing\Edge.class
-pathing\Graph.class
+com/example/restservicecors/GreetingController$NewPair.class

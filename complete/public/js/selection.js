@@ -314,6 +314,14 @@ window.onload = function() {
 		  postData('http://localhost:8080/rides', must_go_arr )
 			.then(data => {
 			  console.log(data); // JSON data parsed by `data.json()` call
+			  var ul = document.createElement('ul');
+			  document.getElementById('output').appendChild(ul);
+	
+			  data.map(obj => obj.name).forEach(function(must_go){
+				var li = document.createElement('li');
+				ul.appendChild(li);
+				li.innerHTML += must_go;
+			});
 			});
 		
 		//document.getElementById("prl").innerHTML = must_go_arr.map(obj => obj.name);
@@ -324,14 +332,7 @@ window.onload = function() {
             hope_arr.push(" " + h[i].firstChild.data);
         }
 		//document.getElementById("prl").innerHTML += ";" + hope_arr;
-		var ul = document.createElement('ul');
-		document.getElementById('output').appendChild(ul);
- 
-		must_go_arr.map(obj => obj.name).forEach(function(must_go){
-			var li = document.createElement('li');
-			ul.appendChild(li);
-			li.innerHTML += must_go;
-		});
+		
 
 		//console.log(must_go_arr);
 		document.getElementsByClassName("plan_result_window")[0].style.display='block';
