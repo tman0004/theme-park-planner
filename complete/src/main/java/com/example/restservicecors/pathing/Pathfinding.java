@@ -27,9 +27,9 @@ public class Pathfinding {
 	 */
 	public Pathfinding() {
 		// build graph
-		buildGraph("../graph_meta.txt");
-		loadTimes("../wait_times.csv");
-		loadMeta("../meta_info.txt");
+		buildGraph("C:/Users/tman0/Documents/theme-park-planner/complete/src/main/java/com/example/restservicecors/graph_meta.txt");
+		loadTimes("C:/Users/tman0/Documents/theme-park-planner/complete/src/main/java/com/example/restservicecors/wait_times.csv");
+		loadMeta("C:/Users/tman0/Documents/theme-park-planner/complete/src/main/java/com/example/restservicecors/meta_info.txt");
 		findShortestWalks();
 		addBreaks();
 		// addMealBreaks();

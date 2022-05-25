@@ -216,7 +216,6 @@ window.onload = function() {
 	var data = [
 		"Golden Zephyr",
 		"Goofy's Sky School",
-		"Jessie's Critter Carousel",
 		"Guardians of the Galaxy",
 		"Incredicoaster",
 		"Jumpin' Jellyfish",
@@ -226,7 +225,6 @@ window.onload = function() {
 		"Pixar Pal-A-Round – Swinging",
 		"Radiator Springs Racers",
 		"Soarin' Over California",
-		"Silly Symphony Swings",
 		"The Little Mermaid ~ Ariel's Undersea Adventure",
 		"Toy Story Midway Mania!"
 	];
@@ -270,6 +268,8 @@ window.onload = function() {
 	
 	var button = document.getElementById("algorithm_call")
     button.onclick = planClick = function() {
+		const loader = document.getElementById("loader");
+		loader.style.display = 'flex';
 		fetch("http://localhost:8080/greeting")
 		.then(data => {return data.json()})
 		.then(res => {
@@ -308,8 +308,12 @@ window.onload = function() {
 			  referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
 			  body: JSON.stringify(data) // body data type must match "Content-Type" header
 			});
+			loader.style.display = 'none'
+			document.getElementsByClassName("plan_result_window")[0].style.display='block';
+			document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
 			return response.json(); // parses JSON response into native JavaScript objects
 		  }
+		  
 		  
 		  postData('http://localhost:8080/rides', must_go_arr )
 			.then(data => {
@@ -335,9 +339,9 @@ window.onload = function() {
 		
 
 		//console.log(must_go_arr);
-		document.getElementsByClassName("plan_result_window")[0].style.display='block';
 		
-		document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+		
+		document.getElementById('button_call').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
 };
