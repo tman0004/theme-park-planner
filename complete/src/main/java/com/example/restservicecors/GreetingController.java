@@ -72,12 +72,12 @@ public class GreetingController {
 //		System.out.println(ride.getName());
 //		System.out.println(ride.getId());
 		for(Ride ride : rides){
-			System.out.println(ride.getName());
+			System.out.println(ride);
 		}
 		Map<String, String> ridesMap = initializeRides();
 
 //		db.put("mustGo", rides);
-		Pathfinding p = new Pathfinding();
+		Pathfinding p = new Pathfinding(rides, ridesMap);
 		ArrayList<Pair<String,Integer>> path = p.findOptimalPath("entrance");
 		Map<String, Integer> rideToOrder = new HashMap<>();
 		Map<String, String> closest = findClosest();
@@ -100,6 +100,7 @@ public class GreetingController {
 
 		for(Ride ride : rides){
 			String backString = ridesMap.get(ride.getName());
+			System.out.println(backString);
 			NewPair pair = new NewPair(ride, rideToOrder.get(backString));
 
 			sortedPath.add(pair);
@@ -138,11 +139,9 @@ public class GreetingController {
 		res.put("The Little Mermaid ~ Ariel's Undersea Adventure", "thelittlemermaid");
 		res.put("Toy Story Midway Mania!", "midwaymania");
 
-		res.put("Silly Symphony Swings", "Silly Symphony Swings");
-		res.put("Goofy's Sky School", "Goofy's Sky School");
-		res.put("Jessie's Critter Carousel", "Jessie's Critter Carousel");
-		res.put("Luigi's Rollickin' Roadsters", "Luigi's Rollickin' Roadsters");
-		res.put("Jumpin' Jellyfish", "Jumpin' Jellyfish");
+		res.put("Goofy's Sky School", "goofysskyschool");
+		res.put("Luigi's Rollickin' Roadsters", "luigisrollickinroadsters");
+		res.put("Jumpin' Jellyfish", "jumpinjellyfish");
 
 
 

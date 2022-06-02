@@ -267,7 +267,10 @@ window.onload = function() {
 	});
 	
 	var button = document.getElementById("algorithm_call")
+	var ul = document.createElement('ul');
+
     button.onclick = planClick = function() {
+		ul.innerHTML = '';
 		const loader = document.getElementById("loader");
 		loader.style.display = 'flex';
 		fetch("http://localhost:8080/greeting")
@@ -287,11 +290,22 @@ window.onload = function() {
 		const must_go_arr = [];
 		let c = document.getElementById('must_go_list').getElementsByTagName('li');
         for (let i = 0; i <c.length-1; i++) {
-            must_go_arr.push({name: c[i].firstChild.data});
+            must_go_arr.push({name: c[i].firstChild.data, priority: 1});
         }
 
 		console.log("must go is ", must_go_arr);
+		const hope_arr = [];
+		let h = document.getElementById('hope_rides_list').getElementsByTagName('li');
+        for (let i = 0; i <h.length-1; i++) {
+            hope_arr.push({name: h[i].firstChild.data, priority: 2});
+        }
 
+		const skip_arr = [];
+		let s = document.getElementById('skippable_rides_list').getElementsByTagName('li');
+        for (let i = 0; i <h.length-1; i++) {
+            skip_arr.push({name: s[i].firstChild.data, priority: 3});
+        }
+		console.log(skip_arr)
 
 		async function postData(url = '', data = {}) {
 			// Default options are marked with *
@@ -314,13 +328,12 @@ window.onload = function() {
 			return response.json(); // parses JSON response into native JavaScript objects
 		  }
 		  
-		  
-		  postData('http://localhost:8080/rides', must_go_arr )
+		  console.log("concats is ");
+		  console.log(must_go_arr.concat(hope_arr).concat(skip_arr));
+		  postData('http://localhost:8080/rides', must_go_arr.concat(hope_arr).concat(skip_arr))
 			.then(data => {
 			  console.log(data); // JSON data parsed by `data.json()` call
-			  var ul = document.createElement('ul');
 			  document.getElementById('output').appendChild(ul);
-	
 			  data.map(obj => obj.name).forEach(function(must_go){
 				var li = document.createElement('li');
 				ul.appendChild(li);
@@ -330,11 +343,7 @@ window.onload = function() {
 		
 		//document.getElementById("prl").innerHTML = must_go_arr.map(obj => obj.name);
 
-		const hope_arr = [];
-		let h = document.getElementById('hope_rides_list').getElementsByTagName('li');
-        for (let i = 0; i <h.length-1; i++) {
-            hope_arr.push(" " + h[i].firstChild.data);
-        }
+		
 		//document.getElementById("prl").innerHTML += ";" + hope_arr;
 		
 

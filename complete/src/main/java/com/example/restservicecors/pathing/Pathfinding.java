@@ -1,20 +1,23 @@
 package pathing;
 
+import com.example.restservicecors.Ride;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class Pathfinding {
 
 	// maybe unused
 	HashMap<String,Integer> strToInt;
 	HashMap<Integer,String> intToString;
-	
+	ArrayList<Ride> ridesInput;
+	Map<String, String> ridesMap;
+
+	Map<String, Ride> mapFromVertexLowerNameToRide;
+
 	// graph representation
 	HashMap<String,Vertex> graph;
 	
@@ -25,13 +28,22 @@ public class Pathfinding {
 	/**
 	 * Constructor to build and preprocess graph.
 	 */
-	public Pathfinding() {
+	public Pathfinding(ArrayList<Ride> ridesInput, Map<String, String> ridesMap) {
 		// build graph
-		buildGraph("C:/Users/tman0/Documents/theme-park-planner/complete/src/main/java/com/example/restservicecors/graph_meta.txt");
-		loadTimes("C:/Users/tman0/Documents/theme-park-planner/complete/src/main/java/com/example/restservicecors/wait_times.csv");
-		loadMeta("C:/Users/tman0/Documents/theme-park-planner/complete/src/main/java/com/example/restservicecors/meta_info.txt");
+		System.out.println("Constructor begin");
+		mapFromVertexLowerNameToRide = new HashMap<>();
+		for(Ride ride : ridesInput){
+			mapFromVertexLowerNameToRide.put(ridesMap.get(ride.getName()) ,ride);
+		}
+		buildGraph("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/graph_meta.txt");
+		loadTimes("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/wait_times.csv");
+		loadMeta("/Users/adityakuppili/Documents/Capstone/theme-park-planner/complete/src/main/java/com/example/restservicecors/meta_info.txt");
 		findShortestWalks();
 		addBreaks();
+		this.ridesMap = ridesMap;
+		this.ridesInput = ridesInput;
+
+		System.out.println("Constructor done");
 		// addMealBreaks();
 	}
 
@@ -129,9 +141,20 @@ public class Pathfinding {
 				// split info
 				String[] info = line.split(",");
 				Vertex v = graph.get(info[0]); // get vertex to modify
-
-				// add info
 				v.setSatisfaction(-Double.parseDouble(info[1]));
+				String vertexLowerName = v.getName().replaceAll("[^A-Za-z]+", "");
+				if(mapFromVertexLowerNameToRide.containsKey(vertexLowerName)){
+					if(mapFromVertexLowerNameToRide.get(vertexLowerName).getPriority() == 1){
+						v.setSatisfaction(-9);
+					}
+					else if(mapFromVertexLowerNameToRide.get(vertexLowerName).getPriority() == 2){
+						v.setSatisfaction(-5);
+					}
+					else{
+						v.setSatisfaction(-1);
+					}
+				}
+				// add info
 				v.setDuration(2+Integer.parseInt(info[2]));
 			}
 
@@ -272,7 +295,7 @@ public class Pathfinding {
 		distances.replace(new Pair<String,Integer>(current + " " + time, time), 0.0);
 
 		// perform |V|-1 times (graph.size()*timeLimit)-1
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			System.out.println("Iteration " + i + " of " + ((graph.size()*timeLimit)-1));
 			// for each edge (consider edge directed)
 			for (Vertex u : graph.values()) {
