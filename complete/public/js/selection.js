@@ -302,7 +302,7 @@ window.onload = function() {
 
 		const skip_arr = [];
 		let s = document.getElementById('skippable_rides_list').getElementsByTagName('li');
-        for (let i = 0; i <h.length-1; i++) {
+        for (let i = 0; i <s.length-1; i++) {
             skip_arr.push({name: s[i].firstChild.data, priority: 3});
         }
 		console.log(skip_arr)
