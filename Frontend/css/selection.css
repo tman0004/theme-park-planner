@@ -99,7 +99,7 @@ h3 {
 	background: linear-gradient(90deg, rgba(125,206,255,1) 27%, rgba(125,255,140,1) 83%);
 }
 
-#skippable_rides_list li, #hope_rides_list li, #must_go_list li {
+#skippable_rides_list li, #hope_rides_list li, #must_go_list li{
 	margin-top: -1px;
 	border: 1px solid rgb(154, 194, 212);
 	padding: 15px;

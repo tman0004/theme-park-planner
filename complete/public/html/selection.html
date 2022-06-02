@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Park Planner</title>
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/planner.css">
+    <link rel="stylesheet" type="text/css" href="../css/map.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="../js/map.js"></script>
+    <script src="../js/start_plan.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/selection.css" />
+	<script type="text/javascript" src="../js/selection.js"></script>
+    
+</head>
+
+<body>
+    <div class="stageBox left sc5" >
+
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <img src="../pics/logo.png">
+                    <a href="../index.html"><b>Theme Park Planner</b></a>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="../index.html"><p><b>Welcome</b></p></a></li>
+                        <li><a href="planner.html"><p><b>Planner</b></p></a></li>
+                        <li><a href="selection.html"><p><b>Selection</b></p></a></li>
+
+                    </ul>
+                </div>
+                <span class="navTrigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+
+        <div id="main_window">
+            <div id="left_pane">
+                <h3>Ride List</h3>
+                <div id="available_metrics_filter">
+                    <ul id="available_metrics_list"> 
+                    </ul>
+                </div>
+            </div>
+            <div id="right_pane">
+                <h3>Skippable Rides</h3>
+                <div id="selected_metrics">
+                    <ul id="skippable_rides_list">
+                        <li id="next_metric">Drag and drop a ride here</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right_pane">
+                <h3>Hope to Go Rides</h3>
+                <div id="selected_metrics">
+                    <ul id="hope_rides_list">
+                        <li id="next_metric2">Drag and drop a ride here</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right_pane">
+                <h3>Must-Go Rides</h3>
+                <div id="selected_metrics">
+                    <ul id="must_go_list">
+                        <li id="next_metric3">Drag and drop a ride here</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="button_container" id="button_call">
+            <button class="plan_button" id="algorithm_call">
+                <span class="button_text" >Plan my day!</span>
+                <span class="button_icon" >
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </span>
+            </button>
+        </div>
+        <div id="loader">
+            <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="plan_result_window" id="result" style="display:none">
+            <div style="text-align:center; padding: 15px" >
+                <h1>Your Personalized Itinerary</h1>
+            </div>
+            <div id="output_pane">
+                <h3>Suggested Ride Order</h3>
+                <div id="output_metrics">
+                    <div id="output" onclick="locateMap()"></div>
+                </div>
+                
+            </div>
+            
+            <div class="right">
+                <div id="map"></div>
+
+                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_Nm-0wy_na3aHj6Zxva0kEVgOWDWVUB4&callback=initMap&v=weekly"
+                    async></script>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript">
+        function moveToLocation(a, b){
+        map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: a, lng: b },
+        zoom: 20,
+      });
+    }
+    </script>
+    
+
+</body>
+
+</html>
