@@ -79,6 +79,10 @@ public class GreetingController {
 //		db.put("mustGo", rides);
 		Pathfinding p = new Pathfinding(rides, ridesMap);
 		ArrayList<Pair<String,Integer>> path = p.findOptimalPath("entrance");
+		System.out.println("path after algo");
+		for(Pair currP : path){
+			System.out.println(currP);
+		}
 		Map<String, Integer> rideToOrder = new HashMap<>();
 		Map<String, String> closest = findClosest();
 		int order = 0;
@@ -100,10 +104,11 @@ public class GreetingController {
 
 		for(Ride ride : rides){
 			String backString = ridesMap.get(ride.getName());
-			System.out.println(backString);
-			NewPair pair = new NewPair(ride, rideToOrder.get(backString));
+			if(rideToOrder.containsKey(backString)) {
+				NewPair pair = new NewPair(ride, rideToOrder.get(backString));
 
-			sortedPath.add(pair);
+				sortedPath.add(pair);
+			}
 		}
 		Collections.sort(sortedPath);
 		System.out.println("Final Path is ");
